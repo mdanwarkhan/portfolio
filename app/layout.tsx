@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Manrope, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -22,7 +24,6 @@ export const metadata: Metadata = {
   authors: [{ name: "Terra Core Innovations" }],
   creator: "Terra Core Innovations",
   publisher: "Terra Core Innovations",
-  themeColor: "#facc15",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -60,8 +61,9 @@ export const metadata: Metadata = {
   },
 };
 
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+export const viewport: Viewport = {
+  themeColor: "#facc15",
+};
 
 export default function RootLayout({
   children,
