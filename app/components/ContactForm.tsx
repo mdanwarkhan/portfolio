@@ -13,8 +13,8 @@ export default function ContactForm() {
   const [phone, setPhone] = useState("+91 ");
   const [emailError, setEmailError] = useState<string | null>(null);
   const [phoneError, setPhoneError] = useState<string | null>(null);
-  const [service, setService] = useState("React Native Development");
-  const [budget, setBudget] = useState("$10,000 - $25,000");
+  const [service, setService] = useState("Web Development");
+  const [budget, setBudget] = useState("₹25,000 - ₹50,000");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<null | string>(null);
 
@@ -106,8 +106,8 @@ export default function ContactForm() {
       setEmail("");
       // reset phone to default +91
       setPhone("+91 ");
-      setService("React Native Development");
-      setBudget("$10,000 - $25,000");
+      setService("Web Development");
+      setBudget("₹25,000 - ₹50,000");
       setMessage("");
 
       setTimeout(() => router.push("/"), 2500);
@@ -143,93 +143,93 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6">
-      <h2 className="text-2xl font-semibold">New Project Inquiry</h2>
+    <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 border border-slate-700 rounded-2xl p-6 sm:p-8 bg-slate-950/40">
+      <h2 className="text-xl sm:text-2xl font-semibold">New Project Inquiry</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
         <div>
-          <label className="block text-sm font-medium">Name</label>
+          <label className="block text-xs sm:text-sm font-medium">Name</label>
           <input
             placeholder="John Doe"
-            className="mt-1 input"
-            value={name}
+            className="mt-1 input text-sm sm:text-base"
             onChange={(e) => setName(e.target.value)}
             required
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium">Company</label>
+          <label className="block text-xs sm:text-sm font-medium">Company</label>
           <input
             placeholder="ABC Technologies"
-            className="mt-1 input"
+            className="mt-1 input text-sm sm:text-base"
             value={company}
             onChange={(e) => setCompany(e.target.value)}
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium">Email</label>
+          <label className="block text-xs sm:text-sm font-medium">Email</label>
           <input
             type="email"
             placeholder="john@abc.com"
-            className="mt-1 input"
+            className="mt-1 input text-sm sm:text-base"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
+          {emailError && <p className="text-xs sm:text-sm text-red-400 mt-1">{emailError}</p>}
         </div>
 
         <div>
-          <label className="block text-sm font-medium">Phone</label>
+          <label className="block text-xs sm:text-sm font-medium">Phone</label>
           <input
             placeholder="+91 9876543210"
-            className="mt-1 input"
+            className="mt-1 input text-sm sm:text-base"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             onBlur={(e) => setPhone(formatPhone(e.target.value))}
           />
-          {phoneError && <p className="text-sm text-red-400 mt-1">{phoneError}</p>}
+          {phoneError && <p className="text-xs sm:text-sm text-red-400 mt-1">{phoneError}</p>}
         </div>
 
         <div>
-          <label className="block text-sm font-medium">Service</label>
-          <select className="mt-1 input" value={service} onChange={(e) => setService(e.target.value)}>
-            <option>Web Design</option>
+          <label className="block text-xs sm:text-sm font-medium">Service</label>
+          <select className="mt-1 input text-sm sm:text-base bg-slate-950" value={service} onChange={(e) => setService(e.target.value)}>
+            <option>Web Development</option>
             <option>ECommerce Development</option>
             <option>Mobile App Development</option>
             <option>CRM Software</option>
-            <option>React Native Development</option>
+            <option>Others</option>
           </select>
         </div>
 
         <div>
-          <label className="block text-sm font-medium">Budget</label>
-          <select className="mt-1 input" value={budget} onChange={(e) => setBudget(e.target.value)}>
-            <option>&lt;$5,000</option>
-            <option>$5,000 - $10,000</option>
-            <option>$10,000 - $25,000</option>
-            <option>$25,000+</option>
+          <label className="block text-xs sm:text-sm font-medium">Budget <span className="text-slate-400 font-normal">(optional)</span></label>
+          <select className="mt-1 input text-sm sm:text-base bg-slate-950" value={budget} onChange={(e) => setBudget(e.target.value)}>
+            <option>&lt;₹25,000</option>
+            <option>₹25,000 - ₹50,000</option>
+            <option>₹50,000 - ₹1,25,000</option>
+            <option>₹1,25,000+</option>
           </select>
         </div>
       </div>
 
       <div>
-        <label className="block text-sm font-medium">Message</label>
+        <label className="block text-xs sm:text-sm font-medium">Message</label>
         <textarea
           placeholder="We need an MVP for our logistics platform."
-          className="mt-1 input h-32"
+          className="mt-1 input h-24 sm:h-32 text-sm sm:text-base"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           required
         />
       </div>
 
-      <div className="flex items-center gap-4">
-        <button type="submit" className="btn-primary" disabled={status === "sending" || status === "sent"}>
+      <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
+        <button type="submit" className="btn-primary text-sm sm:text-base py-2 sm:py-3 px-4 sm:px-6 w-full sm:w-auto" disabled={status === "sending" || status === "sent"}>
           {status === "sending" ? "Sending..." : "Send Inquiry"}
         </button>
-        {status === "error" && <span className="text-red-600">Something went wrong.</span>}
+        {status === "error" && <span className="text-red-600 text-sm sm:text-base">Something went wrong.</span>}
       </div>
     </form>
   );

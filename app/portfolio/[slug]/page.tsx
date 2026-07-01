@@ -1,15 +1,19 @@
 import Link from "next/link";
 import { getProductBySlug } from "../../data/products";
 
-type Props = { params: { slug: string } };
+type Props = { params: { slug: string | string[] } };
 
 export default function ProductPage({ params }: Props) {
-  const product = getProductBySlug(params.slug);
+  const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug;
+  const product = getProductBySlug(slug);
   if (!product) {
     return (
-      <div className="container mx-auto px-6 py-20">
+      <div className="container mx-auto px-6 py-6">
         <h1 className="text-2xl font-bold">Product not found</h1>
-        <Link href="/portfolio" className="btn-ghost">
+        <p className="mt-3 text-sm text-zinc-500">
+          Attempted slug: <span className="font-mono">{slug ?? "(none)"}</span>
+        </p>
+        <Link href="/portfolio" className="btn-ghost mt-6 inline-block">
           Back to portfolio
         </Link>
       </div>
@@ -83,6 +87,24 @@ export default function ProductPage({ params }: Props) {
           <div className="card">
             <h3 className="text-xl font-semibold">Business Problem Solved</h3>
             <p className="mt-2 text-sm text-zinc-700">{product.businessProblem}</p>
+          </div>
+
+          {/* Customer challenge */}
+          <div className="card">
+            <h3 className="text-xl font-semibold">Customer Challenge</h3>
+            <p className="mt-2 text-sm text-zinc-700">{product.customerIssue}</p>
+          </div>
+
+          {/* How we managed it */}
+          <div className="card">
+            <h3 className="text-xl font-semibold">How We Managed It</h3>
+            <p className="mt-2 text-sm text-zinc-700">{product.solutionApproach}</p>
+          </div>
+
+          {/* Business impact */}
+          <div className="card">
+            <h3 className="text-xl font-semibold">Business Impact</h3>
+            <p className="mt-2 text-sm text-zinc-700">{product.businessImpact}</p>
           </div>
         </aside>
       </div>

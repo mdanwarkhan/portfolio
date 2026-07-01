@@ -7,6 +7,9 @@ export type Product = {
   techStack: string[];
   architecture: string;
   businessProblem: string;
+  customerIssue: string;
+  solutionApproach: string;
+  businessImpact: string;
 };
 
 export const products: Product[] = [
@@ -27,7 +30,13 @@ export const products: Product[] = [
     architecture:
       "Microservices: auction service, user service, payments; Postgres for data, Redis for bidding cache; WebSocket layer for live updates.",
     businessProblem:
-      "Reduce friction and fraud in vehicle auctions by providing transparent live bidding and escrowed payments.",
+      "Auction marketplaces were losing bidders and sellers due to opaque bidding, slow refresh, and fraud risk.",
+    customerIssue:
+      "Sellers and buyers were uncertain about bid authenticity and needed faster updates to win auctions.",
+    solutionApproach:
+      "Built live WebSocket bidding, transparent auction statuses, escrow workflows, and seller dashboards to restore trust and accelerate transactions.",
+    businessImpact:
+      "By improving transparency, reducing disputes, and enabling faster bids, the platform increased auction turnover, improved bid revenue, and strengthened seller profit margins.",
   },
   {
     slug: "ride-booking-app",
@@ -41,7 +50,13 @@ export const products: Product[] = [
     architecture:
       "Mobile clients talk to API gateway, which routes to matching, dispatch, and payments microservices. Map tiles via provider.",
     businessProblem:
-      "Improve rider experience and reduce wait times through real-time matching and optimized routing.",
+      "Customers experienced long waits, missed pickups, and inconsistent pricing, causing cancellations and lost revenue.",
+    customerIssue:
+      "Riders were frustrated by long ETAs, unclear fares, and drivers not arriving on time.",
+    solutionApproach:
+      "Implemented real-time driver tracking, automated dispatch, and dynamic pricing with clear fare details.",
+    businessImpact:
+      "Real-time dispatch and optimized routing increased rides completed, reduced idle driver time, and boosted net revenue through higher utilization and smarter pricing.",
   },
   {
     slug: "food-delivery-platform",
@@ -55,7 +70,13 @@ export const products: Product[] = [
     architecture:
       "Event-driven order pipeline: orders -> dispatch -> courier; retries and observability with centralized logging.",
     businessProblem:
-      "Streamline food delivery logistics to increase on-time delivery and restaurant throughput.",
+      "Delivery operations were inefficient, leading to late orders, low restaurant throughput, and customer churn.",
+    customerIssue:
+      "Restaurants and customers lost trust due to late deliveries, missing order data, and courier miscoordination.",
+    solutionApproach:
+      "Delivered a shared platform with end-to-end order visibility, courier assignment rules, and status notifications.",
+    businessImpact:
+      "Improved dispatch coordination and tracking increased on-time delivery, raised average daily orders, and grew commission revenue across the marketplace.",
   },
   {
     slug: "hospital-management-system",
@@ -69,7 +90,13 @@ export const products: Product[] = [
     architecture:
       "Monolith API with strict RBAC; sensitive data encrypted at rest; audit trails for clinical compliance.",
     businessProblem:
-      "Reduce administrative overhead and improve patient record accuracy across departments.",
+      "Manual scheduling and billing created errors, insurance delays, and wasted staff time across departments.",
+    customerIssue:
+      "Staff were overloaded with paperwork and patients waited because schedules and records were not unified.",
+    solutionApproach:
+      "Centralized appointments, patient workflows, and billing on a secure platform with audit trails.",
+    businessImpact:
+      "By automating workflows and improving data accuracy, the system reduced billing leakage, sped up reimbursements, and improved operational profitability.",
   },
   {
     slug: "lms-platform",
@@ -83,7 +110,13 @@ export const products: Product[] = [
     architecture:
       "Server-rendered public pages with headless CMS for course content and stateless APIs for learners.",
     businessProblem:
-      "Enable organizations to scale training while keeping learners engaged and measurable.",
+      "Organizations struggled to deliver consistent training at scale while measuring learner progress and engagement.",
+    customerIssue:
+      "Learners lacked consistent access to training content and managers couldn't measure progress effectively.",
+    solutionApproach:
+      "Built course authoring, progress dashboards, and assessment workflows with analytics for administrators.",
+    businessImpact:
+      "The LMS improved training completion rates, enabled more billable seats, and allowed companies to scale revenue from corporate learning programs.",
   },
   {
     slug: "real-estate-crm",
@@ -97,7 +130,13 @@ export const products: Product[] = [
     architecture:
       "Single-page app with server-side APIs; search powered by indexed search service for fast property queries.",
     businessProblem:
-      "Help agents convert leads faster by automating follow-ups and surfacing relevant properties.",
+      "Agents lost leads and time due to fragmented client data, slow follow-ups, and poor property discovery.",
+    customerIssue:
+      "Agents missed follow-ups and wasted time searching properties in disconnected tools.",
+    solutionApproach:
+      "Created integrated lead capture, automated reminders, and fast property search to streamline workflows.",
+    businessImpact:
+      "Automated lead workflows and fast search helped agents close deals faster, increasing conversion rate and commission-based income.",
   },
   {
     slug: "erp-dashboard",
@@ -111,7 +150,13 @@ export const products: Product[] = [
     architecture:
       "Data warehouse aggregates services; analytics surfaced through dashboarding layer with auth.",
     businessProblem:
-      "Unify disjointed enterprise data into one dashboard for faster decision making.",
+      "Disparate enterprise systems made it hard for leaders to spot margin pressure and cost issues quickly.",
+    customerIssue:
+      "Executives had slow business reporting and couldn't react quickly to margin issues.",
+    solutionApproach:
+      "Connected finance, inventory and HR data into dashboards with alerting and trend analysis.",
+    businessImpact:
+      "Consolidated reporting accelerated decision-making, improved cost control, and helped protect profit by revealing revenue and expense trends faster.",
   },
   {
     slug: "fintech-wallet",
@@ -125,7 +170,13 @@ export const products: Product[] = [
     architecture:
       "Secure core with payment rails and a compliance layer; encryption and tokenization for sensitive data.",
     businessProblem:
-      "Provide low-friction digital payments and a modern savings experience for users.",
+      "Existing payment experiences were slow and insecure, limiting customer trust and transaction volume.",
+    customerIssue:
+      "Users abandoned payments when KYC was cumbersome and transfers felt insecure.",
+    solutionApproach:
+      "Implemented secure onboarding, instant settlement, and tokenized payment flows.",
+    businessImpact:
+      "A faster, secure wallet increased customer retention, enabled more transactions, and generated higher fee revenue with lower fraud risk.",
   },
   {
     slug: "ai-chat-platform",
@@ -139,7 +190,13 @@ export const products: Product[] = [
     architecture:
       "Frontend clients call conversational API; embeddings stored in vector DB for context retrieval; moderation pipeline.",
     businessProblem:
-      "Add AI-driven interactions to products while keeping context and safety under control.",
+      "Customer support and product experiences lacked intelligent automation and consistent context retention.",
+    customerIssue:
+      "Support teams struggled with repetitive questions and inconsistent customer context.",
+    solutionApproach:
+      "Built a conversational AI service with memory, plugin integrations, and moderation controls.",
+    businessImpact:
+      "AI-driven chat reduced support costs, improved customer engagement, and opened new revenue opportunities through premium AI interactions.",
   },
   {
     slug: "inventory-management",
@@ -153,10 +210,23 @@ export const products: Product[] = [
     architecture:
       "Event-driven inventory sync across warehouses; integration adapters for suppliers and marketplaces.",
     businessProblem:
-      "Prevent stockouts and oversells through centralized realtime inventory control.",
+      "Stockouts, oversells, and manual reconciliation were costing revenue and eroding customer trust.",
+    customerIssue:
+      "Operators could not tell stock availability in real time across warehouses.",
+    solutionApproach:
+      "Delivered event-driven syncing, alerts, and supplier coordination to avoid stockouts and oversells.",
+    businessImpact:
+      "Real-time inventory control reduced lost sales, improved order fulfillment, and protected profit by minimizing excess markdowns and stock carrying costs.",
   },
 ];
 
-export function getProductBySlug(slug: string) {
-  return products.find((p) => p.slug === slug) || null;
+export function getProductBySlug(slug: string | string[]) {
+  const rawSlug = Array.isArray(slug) ? slug[slug.length - 1] : slug;
+  if (!rawSlug) return null;
+  const normalizedSlug = rawSlug
+    .toString()
+    .trim()
+    .replace(/^\/+|\/+$/g, "")
+    .toLowerCase();
+  return products.find((p) => p.slug.toLowerCase() === normalizedSlug) || null;
 }
