@@ -1,6 +1,8 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { Metadata } from "next";
 import AnimatedWord from "./components/AnimatedWord";
+import { products } from "./data/products";
+import FAQAccordion from "./components/FAQAccordion";
 
 export const metadata: Metadata = {
   title: "Terra Core Innovations | Web Design & Development Agency",
@@ -41,15 +43,38 @@ export default function Home() {
       <section className="mt-8 sm:mt-12">
         <h2 className="text-2xl sm:text-3xl font-semibold mb-6 sm:mb-8">Featured Projects</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-          <div className="card p-4 sm:p-6">
-            <h3 className="font-medium text-base sm:text-lg mb-2">Project Alpha</h3>
-            <p className="text-xs sm:text-sm text-slate-400">A modern design system for scalable web applications.</p>
-          </div>
-          <div className="card p-4 sm:p-6">
-            <h3 className="font-medium text-base sm:text-lg mb-2">Brand Redesign</h3>
-            <p className="text-xs sm:text-sm text-slate-400">Complete identity redesign with responsive web presence.</p>
-          </div>
+          {products.filter((p) => p.slug !== "vehicle-auction-platform").slice(0, 2).map((project) => (
+            <div key={project.slug} className="card p-4 sm:p-6 hover:border-accent/40 hover:shadow-lg transition border border-transparent">
+              <div className="mb-4">
+                <h3 className="font-medium text-base sm:text-lg mb-2 text-white">{project.title}</h3>
+                <p className="text-xs sm:text-sm text-slate-400">{project.description}</p>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.techStack.slice(0, 3).map((tech) => (
+                  <span key={tech} className="rounded-full bg-white/5 px-2 py-1 text-xs text-slate-300">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <div className="flex gap-2">
+                <button disabled className="btn-primary text-xs sm:text-sm py-2 px-3 opacity-50 cursor-not-allowed" aria-disabled>
+                  View Details
+                </button>
+                {project.downloadUrl && (
+                  <a href={project.downloadUrl} download className="btn-ghost text-xs sm:text-sm py-2 px-3 inline-flex items-center gap-2">
+                    <span className="inline-block text-base">⬇️</span>
+                    Project Overview
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
+      </section>
+
+      <section className="mt-12 sm:mt-16">
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-4 sm:mb-6">Frequently Asked Questions</h2>
+        <FAQAccordion />
       </section>
 
       <section className="mt-12 sm:mt-16 text-center">

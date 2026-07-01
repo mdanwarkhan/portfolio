@@ -10,9 +10,38 @@ export type Product = {
   customerIssue: string;
   solutionApproach: string;
   businessImpact: string;
+  downloadUrl?: string;
 };
 
 export const products: Product[] = [
+  {
+    slug: "arm-power-case-study",
+    title: "ARM Power Infrastructure Case Study",
+    description: "Comprehensive case study on ARM Power infrastructure optimization and deployment strategies.",
+    screenshots: [],
+    features: ["Infrastructure optimization", "Power management", "Deployment strategies"],
+    techStack: ["ARM", "Infrastructure", "Cloud"],
+    architecture: "Enterprise infrastructure solution showcasing best practices in ARM-based power systems.",
+    businessProblem: "Organizations needed to optimize their ARM power infrastructure for better efficiency and reduced operational costs.",
+    customerIssue: "Companies struggled with inefficient power management and high operational expenses in infrastructure deployment.",
+    solutionApproach: "Developed comprehensive strategies for ARM power infrastructure optimization including deployment best practices.",
+    businessImpact: "Successful optimization resulted in significant cost savings, improved infrastructure efficiency, and better resource utilization.",
+    downloadUrl: "/documents/arm-power-case-study.pdf",
+  },
+    {
+      slug: "school-management-case-study",
+      title: "Moon Light Public School – School Management System",
+      description: "School Management System implemented for Moon Light Public School, covering admissions, attendance, grading, and parent communications.",
+      screenshots: [],
+      features: ["Admissions & enrollment", "Attendance tracking", "Grades & reporting"],
+      techStack: ["Next.js", "Node.js", "Postgres"],
+      architecture: "Single application with modular services for admin, teachers, and parents.",
+      businessProblem: "Manual school processes caused administrative overhead and inconsistent communication with parents.",
+      customerIssue: "Staff spent excessive time on manual tasks and parents lacked timely updates on student progress.",
+      solutionApproach: "Built a unified school management platform to automate administrative tasks and provide real-time updates to parents.",
+      businessImpact: "Reduced administrative time, improved parent engagement, and streamlined grading and attendance workflows.",
+      downloadUrl: "/documents/school-management-case-study.pdf",
+    },
   {
     slug: "vehicle-auction-platform",
     title: "Vehicle Auction Platform",
