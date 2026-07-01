@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://terracoreinnovations.com/services",
   },
+  alternates: {
+    canonical: "https://terracoreinnovations.com/services",
+  },
 };
 
 export default function ServicesPage() {

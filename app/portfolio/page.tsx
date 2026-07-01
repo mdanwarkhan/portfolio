@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://terracoreinnovations.com/portfolio",
   },
+  alternates: {
+    canonical: "https://terracoreinnovations.com/portfolio",
+  },
 };
 
 export default function PortfolioPage() {

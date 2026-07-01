@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     description: "Web design, ecommerce development, mobile app development, and custom CRM solutions",
     images: [
       {
-        url: "https://terracoreinnovations.com/og-image.png",
+        url: "https://terracoreinnovations.com/og-image.svg",
         width: 1200,
         height: 630,
         alt: "Terra Core Innovations",
@@ -84,7 +84,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Terra Core Innovations",
               url: "https://terracoreinnovations.com",
-              logo: "https://terracoreinnovations.com/logo.png",
+              logo: "https://terracoreinnovations.com/logo.svg",
               description: "Web design, ecommerce development, mobile app development, and custom CRM solutions",
               sameAs: [
                 "https://www.facebook.com/terracoreinnovations",

@@ -23,6 +23,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       type: "website",
       url: `https://terracoreinnovations.com/services/${slug}`,
     },
+    alternates: {
+      canonical: `https://terracoreinnovations.com/services/${slug}`,
+    },
   };
 }
 

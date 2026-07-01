@@ -1,7 +1,37 @@
 import Link from "next/link";
+import { Metadata } from "next";
 import { getProductBySlug } from "../../data/products";
 
 type Props = { params: { slug: string | string[] } };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug;
+  const product = getProductBySlug(slug);
+
+  if (!product) {
+    return {
+      title: "Product Not Found | Terra Core Innovations",
+      alternates: {
+        canonical: "https://terracoreinnovations.com/portfolio",
+      },
+    };
+  }
+
+  return {
+    title: `${product.title} | Terra Core Innovations`,
+    description: product.description,
+    keywords: [product.title.toLowerCase(), ...product.features.map((feature) => feature.toLowerCase())],
+    openGraph: {
+      title: product.title,
+      description: product.description,
+      type: "website",
+      url: `https://terracoreinnovations.com/portfolio/${slug}`,
+    },
+    alternates: {
+      canonical: `https://terracoreinnovations.com/portfolio/${slug}`,
+    },
+  };
+}
 
 export default function ProductPage({ params }: Props) {
   const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug;

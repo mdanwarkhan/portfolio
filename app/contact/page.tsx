@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://terracoreinnovations.com/contact",
   },
+  alternates: {
+    canonical: "https://terracoreinnovations.com/contact",
+  },
 };
 
 export default function ContactPage() {
