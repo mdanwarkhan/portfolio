@@ -5,43 +5,43 @@ import { useState } from "react";
 const items = [
   {
     q: "What services do you offer?",
-    a: "We provide web and mobile development, product design, and digital strategy focused on measurable business outcomes.",
+    a: "We provide web and mobile development, product design, digital strategy, cloud & DevOps, enterprise integrations (including SAP), and technical recruitment.",
   },
   {
-    q: "How do you price projects?",
-    a: "Pricing depends on scope, timeline, and deliverables; we offer fixed-price, milestone-based, and time-and-materials engagements.",
+    q: "Do you provide recruitment and hiring services?",
+    a: "Yes — we run technical recruitment searches, supply vetted candidate shortlists, and can build dedicated teams (contract, contract-to-hire, or full-time).",
   },
   {
-    q: "What is your typical timeline?",
-    a: "Small projects take weeks; medium initiatives take 2–3 months; larger, product-grade builds take longer depending on scope.",
+    q: "What roles can you recruit for?",
+    a: "We recruit across DevOps, Cloud, SRE, Backend, Frontend, Full-Stack, Data Engineering, QA, SAP consultants, Product, and Design roles.",
   },
   {
-    q: "Do you provide ongoing support?",
-    a: "Yes — we offer maintenance and support plans, as well as staff augmentation for ongoing needs.",
+    q: "How does your recruitment process work?",
+    a: "We gather requirements, source candidates, perform technical screening, present shortlists, and support interviews and offer negotiation until placement.",
   },
   {
-    q: "How do you handle project discovery?",
-    a: "We run a discovery phase that includes stakeholder interviews, goals alignment, and a prioritized roadmap.",
+    q: "How long does it take to fill a position?",
+    a: "Time-to-fill varies by role and seniority — typical searches range from 2–8 weeks; enterprise or niche roles may take longer.",
   },
   {
-    q: "What technologies do you use?",
-    a: "We typically use modern JavaScript stacks (Next.js, React), Node.js backends, and relational databases, tailored to project needs.",
+    q: "How do you price recruitment engagements?",
+    a: "We offer flexible models: retained search, success-based placement fees, or ongoing recruitment support and team augmentation — pricing depends on role and engagement model.",
   },
   {
-    q: "Can you integrate with existing systems?",
-    a: "Yes — we integrate with CRMs, payment providers, analytics, and other third-party services via APIs.",
+    q: "Do you provide project-based development and ongoing support?",
+    a: "Yes — we deliver projects end-to-end and provide maintenance, managed services, and staff augmentation for long-term support.",
   },
   {
-    q: "How do you measure success?",
-    a: "We set KPIs during discovery and track metrics like user engagement, conversion, and operational efficiency.",
+    q: "Can you integrate with our existing systems?",
+    a: "Absolutely — we integrate with CRMs, ERPs, payment providers, analytics, and other third-party systems through secure APIs.",
   },
   {
-    q: "Do you sign NDAs?",
-    a: "Yes, we can sign NDAs and abide by confidentiality requirements for sensitive projects.",
+    q: "Do you sign NDAs and handle sensitive data?",
+    a: "Yes, we sign NDAs and follow security best practices for data protection and confidentiality.",
   },
   {
-    q: "How can I get started?",
-    a: "Start by contacting us via the Contact form; we’ll schedule a discovery call to understand your needs and next steps.",
+    q: "How can I start a hiring request or project?",
+    a: "Use our Contact form on the site or visit the Recruitment page to submit your requirements — we’ll schedule a call and propose next steps.",
   },
 ];
 

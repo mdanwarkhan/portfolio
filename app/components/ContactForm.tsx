@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import emailjs from "@emailjs/browser";
 import { parsePhoneNumberFromString } from "libphonenumber-js";
 
-export default function ContactForm() {
+export default function ContactForm({ defaultService, mode }: { defaultService?: string; mode?: "project" | "recruitment" } = {}) {
   const router = useRouter();
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
@@ -13,8 +13,15 @@ export default function ContactForm() {
   const [phone, setPhone] = useState("+91 ");
   const [emailError, setEmailError] = useState<string | null>(null);
   const [phoneError, setPhoneError] = useState<string | null>(null);
-  const [service, setService] = useState("Web Development");
+  const [service, setService] = useState(defaultService || "Web Development");
   const [budget, setBudget] = useState("₹25,000 - ₹50,000");
+  // recruitment specific
+  const [role, setRole] = useState("");
+  const [hires, setHires] = useState<number | "">(1);
+  const [seniority, setSeniority] = useState("Mid");
+  const [employmentType, setEmploymentType] = useState("Full-time");
+  const [experienceYears, setExperienceYears] = useState("3-5");
+  const [jobDescription, setJobDescription] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<null | string>(null);
 
@@ -84,7 +91,18 @@ export default function ContactForm() {
         throw new Error("EmailJS is not configured. Set NEXT_PUBLIC_EMAILJS_* env vars.");
       }
 
-      const templateParams = { name, company, email, phone, service, budget, message };
+      const templateParams: any = { name, company, email, phone, service, budget, message };
+
+      if (mode === "recruitment") {
+        templateParams.recruit_role = role;
+        templateParams.recruit_hires = hires;
+        templateParams.recruit_seniority = seniority;
+        templateParams.recruit_employment_type = employmentType;
+        templateParams.recruit_experience_years = experienceYears;
+        templateParams.recruit_job_description = jobDescription;
+        templateParams.recruit_message = message;
+        templateParams.service = "Recruitment / Hiring";
+      }
 
       await emailjs.send(serviceId, templateId, templateParams, publicKey);
 
@@ -106,8 +124,9 @@ export default function ContactForm() {
       setEmail("");
       // reset phone to default +91
       setPhone("+91 ");
-      setService("Web Development");
+      setService(defaultService || "Web Development");
       setBudget("₹25,000 - ₹50,000");
+      setJobDescription("");
       setMessage("");
 
       setTimeout(() => router.push("/"), 2500);
@@ -144,7 +163,7 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 border border-slate-700 rounded-2xl p-6 sm:p-8 bg-slate-950/40">
-      <h2 className="text-xl sm:text-2xl font-semibold">New Project Inquiry</h2>
+      <h2 className="text-xl sm:text-2xl font-semibold">{mode === "recruitment" ? "Recruitment Inquiry" : "New Project Inquiry"}</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
         <div>
@@ -192,32 +211,81 @@ export default function ContactForm() {
           {phoneError && <p className="text-xs sm:text-sm text-red-400 mt-1">{phoneError}</p>}
         </div>
 
-        <div>
-          <label className="block text-xs sm:text-sm font-medium">Service</label>
-          <select className="mt-1 input text-sm sm:text-base bg-slate-950" value={service} onChange={(e) => setService(e.target.value)}>
-            <option>Web Development</option>
-            <option>ECommerce Development</option>
-            <option>Mobile App Development</option>
-            <option>CRM Software</option>
-            <option>Others</option>
-          </select>
-        </div>
+        {mode === "project" ? (
+          <>
+            <div>
+              <label className="block text-xs sm:text-sm font-medium">Service</label>
+              <select className="mt-1 input text-sm sm:text-base bg-slate-950" value={service} onChange={(e) => setService(e.target.value)}>
+                <option>Web Development</option>
+                <option>ECommerce Development</option>
+                <option>Mobile App Development</option>
+                <option>CRM Software</option>
+                <option>Others</option>
+              </select>
+            </div>
 
-        <div>
-          <label className="block text-xs sm:text-sm font-medium">Budget <span className="text-slate-400 font-normal">(optional)</span></label>
-          <select className="mt-1 input text-sm sm:text-base bg-slate-950" value={budget} onChange={(e) => setBudget(e.target.value)}>
-            <option>&lt;₹25,000</option>
-            <option>₹25,000 - ₹50,000</option>
-            <option>₹50,000 - ₹1,25,000</option>
-            <option>₹1,25,000+</option>
-          </select>
-        </div>
+            <div>
+              <label className="block text-xs sm:text-sm font-medium">Budget <span className="text-slate-400 font-normal">(optional)</span></label>
+              <select className="mt-1 input text-sm sm:text-base bg-slate-950" value={budget} onChange={(e) => setBudget(e.target.value)}>
+                <option>&lt;₹25,000</option>
+                <option>₹25,000 - ₹50,000</option>
+                <option>₹50,000 - ₹1,25,000</option>
+                <option>₹1,25,000+</option>
+              </select>
+            </div>
+          </>
+        ) : (
+          <>
+            <div>
+              <label className="block text-xs sm:text-sm font-medium">Role / Position</label>
+              <input placeholder="DevOps Engineer, SAP Consultant" className="mt-1 input text-sm sm:text-base" value={role} onChange={(e) => setRole(e.target.value)} />
+            </div>
+
+            <div>
+              <label className="block text-xs sm:text-sm font-medium">Number of hires</label>
+              <input type="number" min={1} className="mt-1 input text-sm sm:text-base" value={hires as any} onChange={(e) => setHires(e.target.value === "" ? "" : Number(e.target.value))} />
+            </div>
+
+            <div>
+              <label className="block text-xs sm:text-sm font-medium">Seniority</label>
+              <select className="mt-1 input text-sm sm:text-base bg-slate-950" value={seniority} onChange={(e) => setSeniority(e.target.value)}>
+                <option>Junior</option>
+                <option>Mid</option>
+                <option>Senior</option>
+                <option>Lead</option>
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-xs sm:text-sm font-medium">Employment type</label>
+              <select className="mt-1 input text-sm sm:text-base bg-slate-950" value={employmentType} onChange={(e) => setEmploymentType(e.target.value)}>
+                <option>Full-time</option>
+                <option>Contract</option>
+                <option>Contract-to-hire</option>
+                <option>Part-time</option>
+              </select>
+            </div>
+          </>
+        )}
       </div>
+
+      {mode === "recruitment" && (
+        <div>
+          <label className="block text-xs sm:text-sm font-medium">Job Description / JD</label>
+          <textarea
+            className="mt-1 input h-28 sm:h-32 text-sm sm:text-base"
+            placeholder="Enter the role summary, responsibilities, and required skills."
+            value={jobDescription}
+            onChange={(e) => setJobDescription(e.target.value)}
+            required
+          />
+        </div>
+      )}
 
       <div>
         <label className="block text-xs sm:text-sm font-medium">Message</label>
         <textarea
-          placeholder="We need an MVP for our logistics platform."
+          placeholder={mode === "recruitment" ? "Any additional notes for the hiring team." : "We need an MVP for our logistics platform."}
           className="mt-1 input h-24 sm:h-32 text-sm sm:text-base"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
