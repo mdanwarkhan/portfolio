@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { Suspense } from "react";
 import { Phone } from "lucide-react";
 import ContactTabs from "../components/ContactTabs";
 
@@ -57,7 +58,9 @@ export default function ContactPage() {
       <h1 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-6">Contact Us</h1>
       <p className="text-slate-300 mb-6 sm:mb-8 text-sm sm:text-base">Fill the form below and we'll get back to you as soon as possible.</p>
       <div className="max-w-2xl mx-auto">
-        <ContactTabs />
+        <Suspense fallback={<div className="text-slate-300 text-center py-8">Loading form...</div>}>
+          <ContactTabs />
+        </Suspense>
       </div>
 
       <a
