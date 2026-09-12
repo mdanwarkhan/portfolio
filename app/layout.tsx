@@ -155,6 +155,20 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+
+        <div className="mobile-cta-bar" aria-label="Quick contact actions">
+          <a href="tel:+917411008507" className="mobile-cta-link mobile-cta-call">
+            Call Now
+          </a>
+          <a
+            href="https://wa.me/917411008507"
+            target="_blank"
+            rel="noreferrer"
+            className="mobile-cta-link mobile-cta-whatsapp"
+          >
+            WhatsApp
+          </a>
+        </div>
       </body>
     </html>
   );

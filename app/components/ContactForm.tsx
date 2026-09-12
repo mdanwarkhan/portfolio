@@ -144,7 +144,15 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 border border-slate-700 rounded-2xl p-6 sm:p-8 bg-slate-950/40">
-      <h2 className="text-xl sm:text-2xl font-semibold">New Project Inquiry</h2>
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+        <h2 className="text-xl sm:text-2xl font-semibold">Tell us about your project</h2>
+        <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-300">
+          Free consultation
+        </span>
+      </div>
+      <p className="text-sm text-slate-300">
+        Share a few details and we’ll suggest the best website, ecommerce or custom software solution for your business.
+      </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
         <div>
@@ -152,6 +160,7 @@ export default function ContactForm() {
           <input
             placeholder="John Doe"
             className="mt-1 input text-sm sm:text-base"
+            value={name}
             onChange={(e) => setName(e.target.value)}
             required
           />
@@ -196,9 +205,12 @@ export default function ContactForm() {
           <label className="block text-xs sm:text-sm font-medium">Service</label>
           <select className="mt-1 input text-sm sm:text-base bg-slate-950" value={service} onChange={(e) => setService(e.target.value)}>
             <option>Web Development</option>
+            <option>Website Design</option>
             <option>ECommerce Development</option>
+            <option>SEO & Local Search</option>
             <option>Mobile App Development</option>
             <option>CRM Software</option>
+            <option>Custom Web App</option>
             <option>Others</option>
           </select>
         </div>
@@ -215,9 +227,9 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-xs sm:text-sm font-medium">Message</label>
+        <label className="block text-xs sm:text-sm font-medium">Project details</label>
         <textarea
-          placeholder="We need an MVP for our logistics platform."
+          placeholder="Tell us what you need: website, ecommerce, SEO, mobile app, or custom software."
           className="mt-1 input h-24 sm:h-32 text-sm sm:text-base"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
@@ -226,9 +238,12 @@ export default function ContactForm() {
       </div>
 
       <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
-        <button type="submit" className="btn-primary text-sm sm:text-base py-2 sm:py-3 px-4 sm:px-6 w-full sm:w-auto" disabled={status === "sending" || status === "sent"}>
-          {status === "sending" ? "Sending..." : "Send Inquiry"}
+        <button type="submit" className="btn-primary text-sm sm:text-base py-2.5 sm:py-3 px-4 sm:px-6 w-full sm:w-auto" disabled={status === "sending" || status === "sent"}>
+          {status === "sending" ? "Sending..." : "Request Free Quote"}
         </button>
+        <a href="tel:+917411008507" className="btn-ghost text-sm sm:text-base py-2.5 sm:py-3 px-4 sm:px-6 w-full sm:w-auto justify-center">
+          Call Now
+        </a>
         {status === "error" && <span className="text-red-600 text-sm sm:text-base">Something went wrong.</span>}
       </div>
     </form>

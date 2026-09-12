@@ -25,8 +25,22 @@ export default function Navbar() {
         backdropFilter: "blur(14px)",
       }}
     >
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-6 py-4 flex items-center justify-between gap-3">
         <Logo />
+
+        <div className="hidden md:flex items-center gap-3">
+          <a href="tel:+917411008507" className="btn-ghost text-xs px-3 py-2">
+            Call Now
+          </a>
+          <a
+            href="https://wa.me/917411008507"
+            target="_blank"
+            rel="noreferrer"
+            className="btn-primary text-xs px-3 py-2"
+          >
+            WhatsApp
+          </a>
+        </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-6">
@@ -66,6 +80,19 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <div className="mt-2 grid grid-cols-2 gap-2">
+              <a href="tel:+917411008507" className="btn-ghost text-sm justify-center">
+                Call Now
+              </a>
+              <a
+                href="https://wa.me/917411008507"
+                target="_blank"
+                rel="noreferrer"
+                className="btn-primary text-sm justify-center"
+              >
+                WhatsApp
+              </a>
+            </div>
           </div>
         </nav>
       )}
