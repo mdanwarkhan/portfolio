@@ -21,8 +21,8 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-6">
-      <h1 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6">Services</h1>
-      <p className="text-slate-300 mb-8 sm:mb-12 text-sm sm:text-base">
+      <h1 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 break-words">Services</h1>
+      <p className="text-slate-300 mb-8 sm:mb-12 text-sm sm:text-base leading-relaxed break-words">
         Comprehensive solutions for your digital transformation needs
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
