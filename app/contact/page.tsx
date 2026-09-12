@@ -7,12 +7,19 @@ const whatsappUrl = "https://wa.me/917411008507";
 const telUrl = "tel:+917411008507";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Terra Core Innovations",
-  description: "Get in touch with Terra Core Innovations. Let's discuss your project and how we can help your business grow.",
-  keywords: ["contact", "inquiry", "project", "web development", "support"],
+  title: "Contact Muzaffarpur Web Development Company | Terra Core Innovations",
+  description:
+    "Get in touch with Terra Core Innovations, a Muzaffarpur web development company for website design, ecommerce, SEO, and custom software projects.",
+  keywords: [
+    "contact Muzaffarpur web developer",
+    "website company in Muzaffarpur",
+    "web development agency Bihar",
+    "Muzaffarpur SEO company",
+    "website design inquiry",
+  ],
   openGraph: {
-    title: "Contact Us | Terra Core Innovations",
-    description: "Get in touch with our team",
+    title: "Contact Terra Core Innovations",
+    description: "Hire a web development company in Muzaffarpur, Bihar",
     type: "website",
     url: "https://terracoreinnovations.com/contact",
   },
@@ -55,7 +62,9 @@ export default function ContactPage() {
       </div>
 
       <h1 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-6">Contact Us</h1>
-      <p className="text-slate-300 mb-6 sm:mb-8 text-sm sm:text-base">Fill the form below and we'll get back to you as soon as possible.</p>
+      <p className="text-slate-300 mb-6 sm:mb-8 text-sm sm:text-base">
+        Looking for a website company in Muzaffarpur? We help businesses in Bihar launch modern websites, ecommerce platforms, and digital systems that drive real results.
+      </p>
       <div className="max-w-2xl mx-auto">
         <ContactForm />
       </div>

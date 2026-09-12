@@ -5,9 +5,17 @@ import { products } from "./data/products";
 import FAQAccordion from "./components/FAQAccordion";
 
 export const metadata: Metadata = {
-  title: "Terra Core Innovations | Web Design & Development Agency",
-  description: "Terra Core Innovations builds modern websites, mobile apps, ecommerce platforms, and CRM solutions. Transform your business with our expert development team.",
-  keywords: ["web design", "web development", "mobile app", "ecommerce", "CRM", "software agency"],
+  title: "Muzaffarpur Web Development Company | Terra Core Innovations",
+  description:
+    "Terra Core Innovations is a Muzaffarpur web development company helping businesses grow with modern websites, ecommerce stores, CRM systems, and local SEO strategy.",
+  keywords: [
+    "Muzaffarpur web development company",
+    "website company in Muzaffarpur",
+    "web designer Muzaffarpur",
+    "ecommerce website Muzaffarpur",
+    "SEO agency Muzaffarpur",
+    "Bihar website development",
+  ],
 };
 
 export default function Home() {
@@ -16,7 +24,7 @@ export default function Home() {
       <section className="relative w-full h-48 sm:h-80 rounded-lg overflow-hidden mb-8 sm:mb-10">
         <img
           src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=80"
-          alt="Software agency desk setup"
+          alt="Muzaffarpur web development company working on digital projects"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/45 flex items-center justify-center">
@@ -25,8 +33,8 @@ export default function Home() {
               Terra Core Innovations
               <span className="cursor-blink" aria-hidden="true" />
             </h1>
-            <p className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg mb-4 sm:mb-6">
-              Building <AnimatedWord /> together with software, design, and digital strategy.
+            <p className="max-w-3xl mx-auto text-sm sm:text-base md:text-lg mb-4 sm:mb-6">
+              Muzaffarpur web development company helping businesses launch high-converting websites, ecommerce stores, mobile apps, and digital systems that drive growth.
             </p>
             <div className="mt-6 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
               <Link href="/portfolio" className="btn-primary text-sm sm:text-base">
@@ -38,6 +46,18 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="mt-8 sm:mt-12">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary mb-3">
+          Local digital growth
+        </p>
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-4 sm:mb-6">
+          Web design and development for businesses in Muzaffarpur
+        </h2>
+        <p className="max-w-4xl text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+          From startup websites to fully custom business platforms, we help local brands in Muzaffarpur improve visibility, streamline operations, and turn more visitors into customers.
+        </p>
       </section>
 
       <section className="mt-8 sm:mt-12">
@@ -79,7 +99,9 @@ export default function Home() {
 
       <section className="mt-12 sm:mt-16 text-center">
         <h2 className="text-2xl sm:text-3xl font-semibold mb-3 sm:mb-4">Let's work together</h2>
-        <p className="text-slate-300 mb-6 text-sm sm:text-base">Have a project? Tell us about it.</p>
+        <p className="text-slate-300 mb-6 text-sm sm:text-base">
+          Have a project in Muzaffarpur or nearby? Tell us about it and we’ll help you launch the right digital solution.
+        </p>
         <Link href="/contact" className="btn-primary text-sm sm:text-base inline-flex">
           Contact Us
         </Link>

@@ -254,3 +254,46 @@ select.input option {
   width: 1.5rem;
   height: 1.5rem;
 }
+
+.top-contact-bar {
+  width: 100%;
+  background: linear-gradient(90deg, #facc15 0%, #eab308 100%);
+  color: #0f172a;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+  overflow: hidden;
+  position: relative;
+  z-index: 60;
+}
+
+.top-contact-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.top-contact-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+  min-width: max-content;
+  padding: 0.6rem 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  animation: marquee-scroll 18s linear infinite;
+}
+
+.top-contact-track span {
+  display: inline-flex;
+  align-items: center;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

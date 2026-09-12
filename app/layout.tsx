@@ -18,32 +18,47 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://terracoreinnovations.com"),
-  title: "Terra Core Innovations — Building tomorrow together",
-  description: "Terra Core Innovations offers web design, ecommerce development, mobile app development, and custom CRM solutions for modern businesses.",
-  keywords: ["web design", "ecommerce development", "mobile app", "CRM software", "web development"],
+  title: "Muzaffarpur Web Development Company | Terra Core Innovations",
+  description:
+    "Terra Core Innovations is a Muzaffarpur, Bihar web development company offering website design, ecommerce development, SEO, and custom software solutions for local businesses.",
+  keywords: [
+    "Muzaffarpur web development company",
+    "website design company in Muzaffarpur",
+    "ecommerce website development Muzaffarpur",
+    "web developer Muzaffarpur",
+    "Bihar web design agency",
+    "custom website development",
+    "SEO services Muzaffarpur",
+  ],
   authors: [{ name: "Terra Core Innovations" }],
   creator: "Terra Core Innovations",
   publisher: "Terra Core Innovations",
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_IN",
     url: "https://terracoreinnovations.com",
     siteName: "Terra Core Innovations",
-    title: "Terra Core Innovations — Building tomorrow together",
-    description: "Web design, ecommerce development, mobile app development, and custom CRM solutions",
+    title: "Muzaffarpur Web Development Company | Terra Core Innovations",
+    description:
+      "Website design, ecommerce development, SEO, and custom business software for Muzaffarpur and Bihar businesses.",
     images: [
       {
         url: "https://terracoreinnovations.com/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "Terra Core Innovations",
+        alt: "Terra Core Innovations - Muzaffarpur Web Development Company",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Terra Core Innovations",
-    description: "Building tomorrow together",
+    description: "Web design and development company in Muzaffarpur, Bihar",
   },
   robots: {
     index: true,
@@ -58,6 +73,12 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://terracoreinnovations.com",
+  },
+  other: {
+    "geo.region": "IN-BR",
+    "geo.placename": "Muzaffarpur, Bihar",
+    "geo.position": "26.1209;85.3647",
+    ICBM: "26.1209, 85.3647",
   },
 };
 
@@ -77,17 +98,30 @@ export default function RootLayout({
     >
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="geo.region" content="IN-BR" />
+        <meta name="geo.placename" content="Muzaffarpur, Bihar" />
+        <meta name="geo.position" content="26.1209;85.3647" />
+        <meta name="ICBM" content="26.1209, 85.3647" />
+        <link rel="icon" href="/icon.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
+              "@type": ["Organization", "ProfessionalService"],
               name: "Terra Core Innovations",
               url: "https://terracoreinnovations.com",
               logo: "https://terracoreinnovations.com/logo.svg",
-              description: "Web design, ecommerce development, mobile app development, and custom CRM solutions",
+              description:
+                "Muzaffarpur-based web development company building websites, ecommerce stores, SEO campaigns, and custom digital solutions for businesses in Bihar.",
+              areaServed: ["Muzaffarpur", "Bihar", "India"],
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Muzaffarpur",
+                addressRegion: "Bihar",
+                addressCountry: "IN",
+              },
+              telephone: "+91-74110-08507",
               sameAs: [
                 "https://www.facebook.com/terracoreinnovations",
                 "https://www.linkedin.com/company/terracoreinnovations",
@@ -97,6 +131,27 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col">
+        <div className="top-contact-bar" aria-label="Contact details bar">
+          <div className="top-contact-marquee">
+            <div className="top-contact-track">
+              <span>Call us: +91 74110 08507</span>
+              <span>•</span>
+              <span>Email: hello@terracoreinnovations.com</span>
+              <span>•</span>
+              <span>WhatsApp: +91 74110 08507</span>
+              <span>•</span>
+              <span>Serving Muzaffarpur, Bihar</span>
+              <span>•</span>
+              <span>Call us: +91 74110 08507</span>
+              <span>•</span>
+              <span>Email: hello@terracoreinnovations.com</span>
+              <span>•</span>
+              <span>WhatsApp: +91 74110 08507</span>
+              <span>•</span>
+              <span>Serving Muzaffarpur, Bihar</span>
+            </div>
+          </div>
+        </div>
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
