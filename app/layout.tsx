@@ -140,15 +140,11 @@ export default function RootLayout({
               <span>•</span>
               <span>WhatsApp: +91 74110 08507</span>
               <span>•</span>
-              <span>Serving Muzaffarpur, Bihar</span>
-              <span>•</span>
               <span>Call us: +91 74110 08507</span>
               <span>•</span>
               <span>Email: hello@terracoreinnovations.com</span>
               <span>•</span>
               <span>WhatsApp: +91 74110 08507</span>
-              <span>•</span>
-              <span>Serving Muzaffarpur, Bihar</span>
             </div>
           </div>
         </div>

@@ -16,7 +16,7 @@ export default function Footer() {
           </a>
         </div>
         <p>
-          © {new Date().getFullYear()} Terra Core Innovations — Muzaffarpur, Bihar web design and development company
+          © {new Date().getFullYear()} Terra Core Innovations — web design and development company
         </p>
       </div>
     </footer>

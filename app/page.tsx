@@ -24,7 +24,7 @@ export default function Home() {
       <section className="relative w-full min-h-[360px] sm:h-80 rounded-lg overflow-hidden mb-8 sm:mb-10">
         <img
           src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=80"
-          alt="Muzaffarpur web development company working on digital projects"
+          alt="Digital agency team working on a website project"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/45" />
@@ -34,9 +34,9 @@ export default function Home() {
               Terra Core Innovations
             </h1>
             <p className="mx-auto text-sm sm:text-base md:text-lg mb-4 sm:mb-6 leading-relaxed max-w-2xl">
-              Muzaffarpur web development company helping businesses launch
-              high-converting websites, ecommerce stores, mobile apps, and digital
-              systems that drive growth.
+              Terra Core Innovations builds high-converting websites, ecommerce
+              experiences, and digital systems that help growing businesses turn
+              attention into revenue.
             </p>
             <div className="mt-6 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
               <Link
@@ -58,15 +58,15 @@ export default function Home() {
 
       <section className="mt-8 sm:mt-12">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary mb-3">
-          Local digital growth
+          Digital growth strategy
         </p>
         <h2 className="text-2xl sm:text-3xl font-semibold mb-4 sm:mb-6">
-          Web design and development for businesses in Muzaffarpur
+          Web design and development for growing businesses
         </h2>
         <p className="max-w-4xl text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-          From startup websites to fully custom business platforms, we help local
-          brands in Muzaffarpur improve visibility, streamline operations, and
-          turn more visitors into customers.
+          From startup launches to fully custom digital platforms, we help brands
+          improve visibility, streamline operations, and turn more visitors into
+          customers.
         </p>
       </section>
 
@@ -137,8 +137,8 @@ export default function Home() {
           Let's work together
         </h2>
         <p className="text-slate-300 mb-6 text-sm sm:text-base">
-          Have a project in Muzaffarpur or nearby? Tell us about it and we’ll
-          help you launch the right digital solution.
+          Have a project in mind? Tell us what you need and we’ll help you launch
+          the right digital solution.
         </p>
         <Link
           href="/contact"

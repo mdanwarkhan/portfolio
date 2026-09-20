@@ -63,7 +63,8 @@ export default function ContactPage() {
 
       <h1 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-6 break-words">Contact Us</h1>
       <p className="text-slate-300 mb-6 sm:mb-8 text-sm sm:text-base leading-relaxed break-words">
-        Looking for a website company in Muzaffarpur? We help businesses in Bihar launch modern websites, ecommerce platforms, and digital systems that drive real results.
+        Need a strategic website partner? We help businesses launch modern websites,
+        ecommerce platforms, and digital systems that drive real results.
       </p>
       <div className="max-w-2xl mx-auto">
         <ContactForm />
